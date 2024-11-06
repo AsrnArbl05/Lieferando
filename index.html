@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieferando Clone</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<section class="headerSection py-3 position-relative z-index-9999">
+    <div class="container-fluid">
+        <div class="row justify-content-between align-items-center">
+            <!-- Logo Section -->
+            <div class="col-xxl-2 col-xl-3">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="assets/arrowToLeft.svg" alt="Arrow to left icon" width="16" height="16">
+                    <img src="./assets/lieferandoBrand.svg" alt="Lieferando Logo" class="headerLogoImg">
+                </a>
+            </div>
+            <!-- Middle Section with Location and Toggle -->
+            <div class="col-xxl-4 col-xl-6 d-flex justify-content-center">
+                <div class="d-flex align-items-center gap-3 header-mid-wrap">
+                    <div class="locationBtn">
+                        <button class="btn btn-light rounded-pill d-flex align-items-center gap-2 py-1 px-2,5">
+                            <img src="assets/locationPinPoint.svg" alt="Location icon" width="16" height="16">
+                            84034 Landshut
+                        </button>
+                    </div>
+
+                    <div class="toggleContainer d-flex align-items-center gap-2">
+                        <input type="radio" id="lieferung" name="toggle" checked>
+                        <label for="lieferung" >
+                            <svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" width="16" height="16">
+                                <path d="M12.139 7.405 11 4.159a.218.218 0 0 1 0-.158.246.246 0 0 1 .158-.122l1.216-.447v-1.4l-1.627.613a1.514 1.514 0 0 0-.998 1.934l.359 1.015H9.75a2.433 2.433 0 0 0-1.925.962l-1.207 1.61-1.06-2.135h.692V4.72h-3.5V6.03h1.339l.726 1.461a2.87 2.87 0 0 0-.735-.105 2.826 2.826 0 1 0 2.826 2.818v-.201l1.969-2.66a1.111 1.111 0 0 1 .875-.438h.831l.254.718a2.844 2.844 0 1 0 1.313-.219h-.01ZM4.08 11.719a1.514 1.514 0 1 1 1.514-1.514 1.505 1.505 0 0 1-1.514 1.514Zm7.875 0a1.514 1.514 0 1 1 1.4-.933 1.505 1.505 0 0 1-1.4.933Z"/>
+                            </svg>
+                            Lieferung
+                        </label>
+                        
+                        <input type="radio" id="abholung" name="toggle">
+                        <label for="abholung">
+                            <svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" width="16" height="16">
+                                <path d="M8.875 2.531H15V1.22H8.875a4.375 4.375 0 0 0-3.929 2.625H3.257l-.122.052A2.047 2.047 0 0 0 1.962 5.2a2.205 2.205 0 0 0 .788 2.275l-.796 5.95c-.012.365.12.72.367.989a1.163 1.163 0 0 0 .875.367h8.671a1.162 1.162 0 0 0 .875-.367 1.364 1.364 0 0 0 .36-1.05l-.77-5.793a2.695 2.695 0 0 0 1.478-1.54H15V4.72h-2.266l-.123.507a1.558 1.558 0 0 1-1.864 1.252l-.34-.062-1.13 1.129a.578.578 0 0 1-.805 0 .586.586 0 0 1-.12-.64.551.551 0 0 1 .13-.183l1.618-1.54a.752.752 0 0 0 .184-.875.77.77 0 0 0-.718-.49H6.46a2.888 2.888 0 0 1 2.415-1.286Zm0 6.493a1.873 1.873 0 0 0 1.33-.551l.665-.666h.087l.753 5.662H3.266l.761-5.688h3.098a1.873 1.873 0 0 0 1.75 1.242Zm-.639-3.868-.665.63c-.198.192-.35.425-.446.683h-3.5a.936.936 0 0 1-.359-.875.717.717 0 0 1 .324-.394h4.646v-.044Z"/>
+                            </svg>
+                            Abholung
+                        </label>
+
+                        <div class="toggleSlider"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Country and Menu Icons -->
+            <div class="col-xxl-2 col-xl-3 d-flex justify-content-end align-items-center">
+                <div class="countrySelect me-2">
+                    <button class="btn btn-light btn-circle p-2 d-flex align-items-center justify-content-center">
+                        <img src="./assets/flagOfGermany.svg" alt="Flag of Germany" class="rounded-circle" width="24" height="24">
+                    </button>
+                </div>
+                <div class="menuBtn">
+                    <button class="btn btn-light btn-circle p-2 d-flex align-items-center justify-content-center">
+                        <img src="./assets/burgerBtn.svg" alt="Burger button icon" width="24" height="24">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 d-flex justify-content-center align-items-center sliderCategory">
+                          
+                <div class="hero-slide-content">
+                    <a href="#">
+                        <div class="slide-thumb">
+                            <img src="./assets/Angebote.webp" alt="Angebote">
+                            <div class="backgroundDiv"></div>
+                        </div>
+                        <span class="slide-text">
+                            Angebote
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hero-slide-content">
+                    <a href="#">
+                        <div class="slide-thumb">
+                            <img src="./assets/Italienische Pizza.webp" alt="Italienische Pizza">
+                            <div class="backgroundDiv"></div>
+                        </div>
+                        <span class="slide-text">
+                            Italienische Pizza
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hero-slide-content">
+                    <a href="#">
+                        <div class="slide-thumb">
+                            <img src="./assets/sushi.webp" alt="Sushi">
+                            <div class="backgroundDiv"></div>
+                        </div>
+                        <span class="slide-text">
+                            Sushi
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hero-slide-content">
+                    <a href="#">
+                        <div class="slide-thumb">
+                            <img src="./assets/Chinesisch.webp" alt="Chinesisch">
+                            <div class="backgroundDiv"></div>
+                        </div>
+                        <span class="slide-text">
+                            Chinesisch
+                        </span>
+                    </a>
+                </div>
+
+            
+                <div class="hero-slide-content">
+                    <a href="#">
+                        <div class="slide-thumb">
+                            <img src="./assets/burger.webp" alt="Burger">
+                            <div class="backgroundDiv"></div>
+                        </div>
+                        <span class="slide-text">
+                            Burger
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hero-slide-content">
+                    <a href="#">
+                        <div class="slide-thumb">
+                            <img src="./assets/Italienisch.webp" alt="Italienisch">
+                            <div class="backgroundDiv"></div>
+                        </div>
+                        <span class="slide-text">
+                            Italienisch
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hero-slide-content">
+                    <a href="#">
+                        <div class="slide-thumb">
+                            <img src="./assets/Indisch.webp" alt="Indisch">
+                            <div class="backgroundDiv"></div>
+                        </div>
+                        <span class="slide-text">
+                            Indisch
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hero-slide-content">
+                    <a href="#">
+                        <div class="slide-thumb">
+                            <img src="./assets/Griechisch.webp" alt="Griechisch">
+                            <div class="backgroundDiv"></div>
+                        </div>
+                        <span class="slide-text">
+                            Griechisch
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hero-slide-content">
+                    <a href="#">
+                        <div class="slide-thumb">
+                            <img src="./assets/Amerikanisch.webp" alt="Amerikanisch">
+                            <div class="backgroundDiv"></div>
+                        </div>
+                        <span class="slide-text">
+                            Amerikanisch
+                        </span>
+                    </a>
+                </div>
+
+                <div class="swiper-button-next">
+                    <button>
+                        <img src="./assets/arrowToTheRight.svg" alt="Arrow to right icon" width="24" height="24">
+                    </button>
+                </div>
+
+            </div>
+                            
+        </div>
+        </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Main Section -->
+<section class="app-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3">
+                <div class="app-sidebar">
+
+                    <div class="total-restaurant common-sidebar-title">
+                        <h4>10 Restaurants</h4>
+                    </div>
+
+                    <div class="app-option-with-btn common-sidebar-title d-flex justify-content-between align-items-center mb-3">
+                        <h4>Jetzt geöffnet</h4>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input mz-switch" type="checkbox" id="mz-switch-rounded">
+                            <label class="form-check-label" for="mz-switch-rounded"></label>
+                        </div>
+                    </div>
+
+                    <div class="app-option-with-btn common-sidebar-title d-flex justify-content-between align-items-center mb-3">
+                        <h4>Kostenlose Lieferung</h4>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input mz-switch" type="checkbox" id="mz-switch-rounded-2">
+                            <label class="form-check-label" for="mz-switch-rounded-2"></label>
+                        </div>
+                    </div>
+                    
+                    <div class="app-sidebar-select-box common-sidebar-title">
+                        <h4>
+                            Mindestbestellbetrag
+                            <img src="./assets/info.svg" alt="Info icon" width="24" height="24">
+                        </h4>
+                        <div>
+                            <div class="sidebar-select-box">
+                                <input type="radio" name="mindest-select" id="mindest-select-1" checked>
+                                <label for="mindest-select-1">
+                                    Alle anzeigen(36)
+                                </label>
+                            </div>
+                            <div class="sidebar-select-box">
+                                <input type="radio" name="mindest-select" id="mindest-select-2">
+                                <label for="mindest-select-2">
+                                    10,00 € oder weniger (3)
+                                </label>
+                            </div>
+                            <div class="sidebar-select-box">
+                                <input type="radio" name="mindest-select" id="mindest-select-3">
+                                <label for="mindest-select-3">
+                                    10,00 € oder weniger (3)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BEWERTUNG -->
+                    <div class="app-sidebar-rating common-sidebar-title">
+                        <h4>Bewertung</h4>
+                        <div class="rating-wrap">
+                            <img src="./assets/star.svg" alt="Star">
+                            <img src="./assets/star.svg" alt="Star">
+                            <img src="./assets/star.svg" alt="Star">
+                            <img src="./assets/star.svg" alt="Star">
+                            <img src="./assets/star.svg" alt="Star">
+                        </div>
+                    </div>
+
+                    <!-- Angebote und Rabatte -->
+                    <div class="app-sidebar-checkbox common-sidebar-title d-flex flex-column">
+                        <h4>
+                            Angebote und Rabatte
+                            <img src="./assets/info.svg" alt="Info icon" width="24" height="24">
+                        </h4>
+                        <div class="sidebar-checkbox">
+                            <input class = "customCheckbox" type="checkbox" for="angebote" id="angebote">
+                            <label for="angebote">
+                                Angebote (12)
+                            </label>
+                        </div>
+                        <div class="sidebar-checkbox">
+                            <input class = "customCheckbox" type="checkbox" for="angebote" id="stempelkarten">
+                            <label for="stempelkarten">
+                                Stempelkarten (17)
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-xl-9">
+                <div class="app-main">
+                    <div class="app-main-header">
+                        <div class="app-search">
+                            <input type="search" placeholder="Restaurants und Gerichte">
+                            <button type="submit">
+                                <img src="./assets/search.svg" alt="Search icon">
+                            </button>
+                        </div>
+                        <div class="app-main-selectbox-wrap">
+                            <h4>
+                                Sortieren nach
+                            </h4>
+                            <div class="app-main-selectbox">
+                                <select id="select_0" autocomplete="off" 
+                                        aria-invalid="false">
+                                    <option value="bestMatch">Größte Übereinstimmung</option>
+                                    <option value="reviewRating">Bewertungen</option>
+                                    <option value="distance" >Entfernung</option>
+                                    <option value="deliveryTime">Ungefähre Lieferzeit</option>
+                                    <option value="popularity">Am beliebtesten</option>
+                                    <option value="minimumOrderValue">Mindestbestellwert</option>
+                                    <option value="deliveryFee">Lieferkosten</option>
+                                    <option value="averagePrice">Produktpreis</option>
+                                    <option value="alphabetical">Alphabetisch</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="app-main-location-btn">
+                            <button>
+                                <img src="./assets/area.svg" alt="Area icon" width="24" height="24">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="app-card-wrapper p-t-25">
+                        <div class="app-card-head">
+                            <h5>
+                                Bestelle von 10 Restaurants
+                            </h5>
+                            <a href="#">
+                                So werden diese Ergebnisse sortiert
+                            </a>
+                        </div>
+                        <div class="app-card-layout">
+                            
+                            <!-- Restaurant Cards -->
+
+                            <!-- Call A Pizza 1 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Left Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        
+                                        <img src="./assets/callAPizza.jpeg" alt="Call a Pizza" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/callAPizzaLogo.png" alt="Call a Pizza logo" class="restaurantLogo">
+                                        </div>
+                                        
+                                        <div href="#" class="gesponsertBadge badge position-absolute end-0 bottom-0 me-3 mb-3">Gesponsert</div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Call a Pizza</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>4</strong>(200+)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Italienische Pizza, Pasta</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">30-55 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-success">
+                                            <svg width="16" height="16" fill="currentColor">
+                                                <path d="M12.139 7.405L11 4.159a.218.218 0 010-.158.246.246 0 01.158-.122l1.216-.447v-1.4l-1.627.613a1.514 1.514 0 00-.998 1.934l.359 1.015H9.75a2.433 2.433 0 00-1.925.962l-1.207 1.61-1.06-2.135h.692V4.72h-3.5V6.03h1.339l.726 1.461a2.87 2.87 0 00-.735-.105 2.826 2.826 0 102.826 2.818v-.201l1.969-2.66a1.111 1.111 0 01.875-.438h.831l.254.718a2.844 2.844 0 101.313-.219h-.01zM4.08 11.719a1.514 1.514 0 111.514-1.514 1.505 1.505 0 01-1.514 1.514zm7.875 0a1.514 1.514 0 111.4-.933 1.505 1.505 0 01-1.4.933z"></path>
+                                            </svg>
+                                            <span class="ms-1">Keine Liefergebühr</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 20,00€</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="#" class="text-dark d-flex align-items-center text-decoration-none">
+                                        <span class="d-flex align-items-center justify-content-center bg-warning rounded-circle me-1" style="width: 20px; height: 20px;">
+                                            <img src="./assets/priceTag.svg" alt="Price tag icon" width="16" height="16">
+                                        </span>
+                                        Angebot
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Si Trattoria 2 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        <img src="./assets/siTratorria.jpeg" alt="Si Trattoria" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/siTrattoriaLogo.png" alt="Si Trattoria" class="restaurantLogo">
+                                        </div>
+                                        <div class="position-absolute end-0 bottom-0 me-3 mb-3">
+                                            <a href="#" class="stempelKarteBadge badge text-dark">Stempelkarte</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Si Trattoria</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>4,4</strong>(152+)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Italienische Pizza, Burger</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">40-65 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-success">
+                                            <svg width="16" height="16" fill="currentColor">
+                                                <path d="M12.139 7.405L11 4.159a.218.218 0 010-.158.246.246 0 01.158-.122l1.216-.447v-1.4l-1.627.613a1.514 1.514 0 00-.998 1.934l.359 1.015H9.75a2.433 2.433 0 00-1.925.962l-1.207 1.61-1.06-2.135h.692V4.72h-3.5V6.03h1.339l.726 1.461a2.87 2.87 0 00-.735-.105 2.826 2.826 0 102.826 2.818v-.201l1.969-2.66a1.111 1.111 0 01.875-.438h.831l.254.718a2.844 2.844 0 101.313-.219h-.01zM4.08 11.719a1.514 1.514 0 111.514-1.514 1.505 1.505 0 01-1.514 1.514zm7.875 0a1.514 1.514 0 111.4-.933 1.505 1.505 0 01-1.4.933z"></path>
+                                            </svg>
+                                            <span class="ms-1">Keine Liefergebühr</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 20,00€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Der Pizza Service Landshut 3 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Left Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        <img src="./assets/pizzaServiceLandshut.jpeg" alt="Der Pizza Service Landshut" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/pizzaServiceLandshutLogo.png" alt="Der Pizza Service Landshut logo" class="restaurantLogo">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Der Pizza Service Landshut</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>3,8</strong>(200+)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Italienische Pizza, Burger</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">40-65 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-dark">
+                                            <img src="./assets/bicycle.svg" alt="Bike icon" width="16" height="16">
+                                            <span class="ms-1">1,00€</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 10,00€</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center mt-1 gap-3">
+                                        <!-- Kostenlose Lieferung Link -->
+                                        <a href="#" class="text-success d-flex align-items-center gap-1 text-decoration-none">
+                                            <svg viewBox="0 0 16 16" width="16" height="16" role="presentation" focusable="false" aria-hidden="true" fill="#017a39">
+                                                <path d="M13.871 6.355a2.456 2.456 0 01-.472-.586c-.07-.26-.1-.528-.088-.796a2.467 2.467 0 00-.516-1.75 2.467 2.467 0 00-1.75-.517 2.626 2.626 0 01-.796-.087 2.283 2.283 0 01-.578-.473A2.45 2.45 0 008 1.22a2.45 2.45 0 00-1.654.875c-.165.188-.36.347-.577.472-.26.07-.528.1-.796.088a2.415 2.415 0 00-1.75.516 2.467 2.467 0 00-.517 1.75c.012.268-.018.537-.087.796a2.459 2.459 0 01-.473.587A2.415 2.415 0 001.22 8a2.415 2.415 0 00.875 1.645c.186.17.346.368.472.586.07.26.1.528.088.796a2.467 2.467 0 00.516 1.75c.496.39 1.122.575 1.75.517.268-.012.537.018.796.087.217.125.412.285.578.473a2.45 2.45 0 001.654.875 2.45 2.45 0 001.653-.875c.166-.188.36-.348.578-.473.26-.07.528-.099.796-.087a2.415 2.415 0 001.75-.517c.39-.495.574-1.122.516-1.75a2.621 2.621 0 01.088-.796c.126-.218.286-.416.472-.586A2.415 2.415 0 0014.676 8a2.415 2.415 0 00-.805-1.645zm-.936 2.38a3.37 3.37 0 00-.753 1.015A3.503 3.503 0 0012 11.019a1.89 1.89 0 01-.132.875 1.89 1.89 0 01-.875.131c-.43-.017-.86.045-1.268.184a3.367 3.367 0 00-.998.752c-.245.236-.551.534-.735.534-.183 0-.49-.297-.735-.534a3.368 3.368 0 00-1.006-.779A3.503 3.503 0 004.981 12a1.89 1.89 0 01-.875-.132 1.89 1.89 0 01-.131-.875 3.5 3.5 0 00-.158-1.242 3.369 3.369 0 00-.752-.998c-.236-.245-.534-.55-.534-.735 0-.183.298-.49.534-.734.314-.294.57-.644.752-1.033a3.5 3.5 0 00.184-1.269 1.89 1.89 0 01.131-.875 1.89 1.89 0 01.876-.131 3.5 3.5 0 001.242-.158c.377-.186.715-.441.997-.752.245-.236.552-.534.736-.534.183 0 .49.298.734.534.294.314.644.57 1.033.752a3.5 3.5 0 001.269.184 1.89 1.89 0 01.875.131c.112.278.157.578.131.876a3.5 3.5 0 00.157 1.242c.187.377.442.715.753.997.236.245.534.552.534.736 0 .183-.298.507-.534.752zM10.73 8A4.821 4.821 0 008 10.73 4.821 4.821 0 005.27 8 4.821 4.821 0 008 5.27 4.821 4.821 0 0010.73 8z"></path>
+                                            </svg>
+                                            Kostenlose Lieferung ab 30,00€
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Surahi Restaurant 4 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Left Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        <img src="./assets/surahiRestaurant.jpeg" alt="Surahi Restaurant" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/surahiRestaurantLogo.png" alt="Surahi Restaurant logo" class="restaurantLogo">
+                                        </div>
+                                        <div class="position-absolute end-0 bottom-0 me-3 mb-3">
+                                            <a href="#" class="stempelKarteBadge badge text-dark">Stempelkarte</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Surahi Restaurant</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>4,6</strong>(200+)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Indisch, 100% Halal</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">30-55 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-success">
+                                            <svg width="16" height="16" fill="currentColor">
+                                                <path d="M12.139 7.405L11 4.159a.218.218 0 010-.158.246.246 0 01.158-.122l1.216-.447v-1.4l-1.627.613a1.514 1.514 0 00-.998 1.934l.359 1.015H9.75a2.433 2.433 0 00-1.925.962l-1.207 1.61-1.06-2.135h.692V4.72h-3.5V6.03h1.339l.726 1.461a2.87 2.87 0 00-.735-.105 2.826 2.826 0 102.826 2.818v-.201l1.969-2.66a1.111 1.111 0 01.875-.438h.831l.254.718a2.844 2.844 0 101.313-.219h-.01zM4.08 11.719a1.514 1.514 0 111.514-1.514 1.505 1.505 0 01-1.514 1.514zm7.875 0a1.514 1.514 0 111.4-.933 1.505 1.505 0 01-1.4.933z"></path>
+                                            </svg>
+                                            <span class="ms-1">Keine Liefergebühr</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 15,00€</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Extra Links -->
+                                    <div class="d-flex align-items-center mt-1 gap-3">
+                                        <!-- Angebot Link -->
+                                        <a href="#" class="text-dark d-flex align-items-center text-decoration-none">
+                                            <span class="d-flex align-items-center justify-content-center bg-warning rounded-circle me-1" style="width: 20px; height: 20px;">
+                                                <img src="./assets/priceTag.svg" alt="Price tag icon" width="16" height="16">
+                                            </span>
+                                            Angebot
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kinh Do 5 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Left Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        <img src="./assets/kinhDo.jpeg" alt="Kinh Do" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/kinhDoLogo.png" alt="Kinh Do logo" class="restaurantLogo">
+                                        </div>
+                                        <div class="position-absolute end-0 bottom-0 me-3 mb-3">
+                                            <a href="#" class="stempelKarteBadge badge text-dark">Stempelkarte</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Kinh Do</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>4,8</strong>(192)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Sushi, Thailändisch</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">30-55 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-success">
+                                            <svg width="16" height="16" fill="currentColor">
+                                                <path d="M12.139 7.405L11 4.159a.218.218 0 010-.158.246.246 0 01.158-.122l1.216-.447v-1.4l-1.627.613a1.514 1.514 0 00-.998 1.934l.359 1.015H9.75a2.433 2.433 0 00-1.925.962l-1.207 1.61-1.06-2.135h.692V4.72h-3.5V6.03h1.339l.726 1.461a2.87 2.87 0 00-.735-.105 2.826 2.826 0 102.826 2.818v-.201l1.969-2.66a1.111 1.111 0 01.875-.438h.831l.254.718a2.844 2.844 0 101.313-.219h-.01zM4.08 11.719a1.514 1.514 0 111.514-1.514 1.505 1.505 0 01-1.514 1.514zm7.875 0a1.514 1.514 0 111.4-.933 1.505 1.505 0 01-1.4.933z"></path>
+                                            </svg>
+                                            <span class="ms-1">Keine Liefergebühr</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 20,00€</span>
+                                        </div>
+                                    </div>
+                                    
+                    
+                                    <a href="#" class="text-dark d-flex align-items-center text-decoration-none">
+                                        <span class="d-flex align-items-center justify-content-center bg-warning rounded-circle me-1" style="width: 20px; height: 20px;">
+                                            <img src="./assets/priceTag.svg" alt="Price tag icon" width="16" height="16">
+                                        </span>
+                                        Angebot
+                                    </a>                
+                                </div>
+                            </div>
+
+                            <!-- Tanda Palace 6 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Left Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        <img src="./assets/tandaPalace.jpeg" alt="Tanda Palace" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/tandaPalaceLogo.png" alt="Tanda Palace logo" class="restaurantLogo">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Tanda Palace</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>4,9</strong>(200+)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Indisch, Asiatisch</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">30-55 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-dark">
+                                            <img src="./assets/bicycle.svg" alt="Bike icon" width="16" height="16">
+                                            <span class="ms-1">1,50€</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 20,00€</span>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hellas Restaurant 7 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Left Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        <img src="./assets/hellas.jpeg" alt="Hellas Restaurant" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/hellasLogo.png" alt="Hellas Restaurant logo" class="restaurantLogo">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Hellas Restaurant</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>4,9</strong>(200+)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Griechisch</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">15-40 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-dark">
+                                            <img src="./assets/bicycle.svg" alt="Bike icon" width="16" height="16">
+                                            <span class="ms-1">2,00€</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 30,00€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Loco Chicken Landshut 8 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Left Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        <img src="./assets/locoChicken.jpeg" alt="Loco Chicken Landshut" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/locoChickenLogo.png" alt="Loco Chicken Landshut logo" class="restaurantLogo">
+                                        </div>
+                                        <div class="position-absolute end-0 bottom-0 me-3 mb-3">
+                                            <a href="#" class="stempelKarteBadge badge text-dark">Stempelkarte</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Loco Chicken</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>3,5</strong>(48)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Amerikanisch, Hühnchen</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">60-85 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-dark">
+                                            <img src="./assets/bicycle.svg" alt="Bike icon" width="16" height="16">
+                                            <span class="ms-1">1,50€</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 25,00€</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="#" class="text-dark d-flex align-items-center text-decoration-none">
+                                        <span class="d-flex align-items-center justify-content-center bg-warning rounded-circle me-1" style="width: 20px; height: 20px;">
+                                            <img src="./assets/priceTag.svg" alt="Price tag icon" width="16" height="16">
+                                        </span>
+                                        Angebot
+                                    </a>
+                                    
+                                </div>
+                            </div>
+
+                            <!-- Burger King 9 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Left Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        <img src="./assets/burgerKing.jpeg" alt="Burger King" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/burgerKingLogo.png" alt="Burger King logo" class="restaurantLogo">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Burger King</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>2,8</strong>(200+)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Burger, Amerikanisch</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">50-75 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-success">
+                                            <svg width="16" height="16" fill="currentColor">
+                                                <path d="M12.139 7.405L11 4.159a.218.218 0 010-.158.246.246 0 01.158-.122l1.216-.447v-1.4l-1.627.613a1.514 1.514 0 00-.998 1.934l.359 1.015H9.75a2.433 2.433 0 00-1.925.962l-1.207 1.61-1.06-2.135h.692V4.72h-3.5V6.03h1.339l.726 1.461a2.87 2.87 0 00-.735-.105 2.826 2.826 0 102.826 2.818v-.201l1.969-2.66a1.111 1.111 0 01.875-.438h.831l.254.718a2.844 2.844 0 101.313-.219h-.01zM4.08 11.719a1.514 1.514 0 111.514-1.514 1.505 1.505 0 01-1.514 1.514zm7.875 0a1.514 1.514 0 111.4-.933 1.505 1.505 0 01-1.4.933z"></path>
+                                            </svg>
+                                            <span class="ms-1">Keine Liefergebühr</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 10,00€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Mama Wok & Happy Bowl Sushi 10 -->
+                            <div class="restaurantCard d-flex flex-row w-100 gap-1">
+                                <!-- Left Image Section -->
+                                <div class="d-flex flex-shrink-0" style="width: 290px;">
+                                    <div class="position-relative">
+                                        <img src="./assets/mamaHappyWok.jpeg" alt="Mama Wok & Happy Bowl Sushi" class="img-fluid rounded-start">
+                                        <div class="position-absolute bg-white rounded p-1" style="width: 48px; height: 48px; bottom: 16px; left: 16px;">
+                                            <img src="./assets/mamaHappyWokLogo.png" alt="Mama Wok & Happy Bowl Sushi logo" class="restaurantLogo">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Content Section -->
+                                <div class="p-3 pb-0 flex-grow-1">
+                                    <h5 class="mb-2 fw-bold">Mama Wok & Happy Bowl Sushi</h5>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="d-flex align-items-center me-2">
+                                            <img src="./assets/starFilled.svg" alt="Star filled icon" width="16" height="16">
+                                            <span class="ms-1"><strong>4,5</strong>(200+)</span>
+                                        </div>
+                                        <p class="mb-0 text-muted">Sushi, Asiatisch</p>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/clock.svg" alt="Clock icon" width="16" height="16">
+                                            <span class="ms-1">15-40 min</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-dark">
+                                            <img src="./assets/bicycle.svg" alt="Bike icon" width="16" height="16">
+                                            <span class="ms-1">1,00€</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="./assets/shoppingBag.svg" alt="Shoping bag icon" width="16" height="16">
+                                            <span class="ms-1">Min. 25,00€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4 text-center">
+    <div class="container">
+        <div class="row justify-content-center mb-3 mt-2">
+            <div class="col-auto">
+                <a href="#" class="text-dark">Ein Restaurant empfehlen</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="text-dark">Ein Restaurant anmelden</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="text-dark">Jobs</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="text-dark">AGB</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="text-dark">Datenschutzerklärung</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="text-dark">Impressum</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="text-dark">Verwendung von Cookies</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="text-dark">Bug Bounty</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="text-dark">Ethik-Hotline</a>
+            </div>
+        </div>
+        <p class="mb-0 text-muted">&copy; 2024 Lieferando.de</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+/* ================== Header =================== */
+/* Title */
+.headerTitle h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ==================== Main Section =============== */
+.mainSection {
+    position: relative;
+    z-index: 2;
+    padding-right: 320px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .mainSection {
+        padding-right: 0;
+        width: 100%;
+    }
+}
+@media (max-width: 767px) {
+    .mainSection {
+        padding-right: 0;
+        width: 100%;
+    }
+}
+
+/* ===== Main Left ===== */
+
+.restaurantThumbnail .restaurantLogo {
+    width: 80px;
+    height: 80px;
+    bottom: 16px;
+    left: 14%;
+}
+
+/* Read more Link */
+.readMoreLink a {
+    font-size: 14px;
+    color: #125fca;
+}
+.readMoreLink a:hover {
+    text-decoration: none;
+}
+
+/* About us Btn */
+.aboutUsBtn {
+    background-color: #f5f3f1;
+    transition: all 0.3s linear 0s;
+}
+.aboutUsBtn:hover {
+    cursor: pointer;
+    background-color: #ebe9e8;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .aboutUsBtn button {
+        padding: 8px 10px;
+    }
+}
+
+/* Heart Btn */
+.heartBtn {
+    width: 48px;
+    height: 48px;
+    background: #ebe9e8;
+    transition: all 0.3s linear 0s;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .heartBtn {
+        width: 38px;
+        height: 38px;
+    }
+}
+.heartBtn:hover {
+    cursor: pointer;
+    background: rgb(215, 213, 212);
+}
+
+/* === Category Btns === */
+.categoryLayout {
+    padding-top: 16px;
+    padding-bottom: 30px; 
+}
+/* get horizontal scrollbar when items are wider than parent div */
+.categoryWrap {
+    overflow-x: auto;
+}
+.categoryBtn {
+    flex: none;
+    display: inline-flex;
+    padding: 5px 16px;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border-radius: 9999px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    transition: all 0.3s linear 0s;
+}
+.categoryBtn:hover {
+    cursor: pointer;
+    background-color: #ebe9e8;
+}
+.categoryBtn.active {
+    background: #262626;
+    color: #fff;
+}
+
+/* Next Btn & Menu Btn Category */
+.nextBtn, .menuBtnCategory {
+    width: 35px;
+    height: 35px;
+    background: #ebe9e8;
+    transition: all 0.3s linear 0s;
+}
+.nextBtn:hover, .menuBtnCategory:hover {
+    cursor: pointer;
+    background: #d7d5d4;
+}
+
+
+/* === Cards === */
+
+/* Product Card */
+.productCard {
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+    transition: all 0.3s linear 0s;
+}
+.productCard:hover {
+    cursor: pointer;
+    background: #fcfcfc;
+}
+.productCard .productCardHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.productCard .productCardHead .productCardTitle {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.productCard .productCardHead .productCardTitle h5 {
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 28px;
+}
+.productCard .productCardHead .productCardTitle a {
+    color: rgb(36, 46, 48);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+.productCard .productCardHead .productCardTitle a:hover {
+    text-decoration: none;
+}
+.productCard .productContent p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 5px;
+}
+.productCard .productContent span {
+    box-sizing: border-box;
+    color: rgb(60, 76, 79);
+    cursor: pointer;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+.productCard .productContent ul {
+    padding-left: 20px;
+}
+.productCard .productPrice p {
+    box-sizing: border-box;
+    color: rgb(36, 46, 48);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 28px;
+}
+
+  
+/* Product Card Plus Icon */
+.plusIcon {
+    margin-right: 12px;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    border-radius: 9999px;
+    transition: all 0.3s linear 0s;
+}
+.plusIcon:hover {
+    background: rgb(215, 213, 212);
+}
+
+
+/* Category Big Img */
+.categoryBigImg {
+    width: 100%;
+    height: 152px;
+}
+.categoryBigImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+
+
+
+/* ========= Maybe Delete =========== */
+/* ========= TO DO =========== */
+/* Getränke Icon */
+.product-content-2 {
+    display: flex;
+    justify-content: center;
+    max-width: 90%;
+}
+
+.product-content-2 .productImg {
+    width: 120px;
+}
+.product-content-2 .productImg img {
+    width: 100%;
+}
+/* ========= TO DO =========== */
+
+
+
+
+/* Impressum */
+.impressumText a {
+    cursor: pointer;
+}
+.impressumText a:hover{
+    text-decoration: none;
+}
+.textSeparator {
+    border-bottom: 2px solid #e2e8f0;
+}
+
+
+/* ====== Main Right ====== */
+
+/* Toggle Button */
+.toggleContainer, .toggleContainerBig{
+    height: 48px;
+    width: 280px;
+}
+.toggleSlider, .toggleSliderBig{
+    height: 44px;
+    width: 138px;
+}
+
+.mainRight {
+    width: 320px;
+}
+
+.boxShadow {
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.02), 0px 2px 12px -2px rgba(0, 0, 0, 0.08), 0px 3px 6px 0px rgba(0, 0, 0, 0.06);
+}
